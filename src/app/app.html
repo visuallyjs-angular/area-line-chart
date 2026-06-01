@@ -1,0 +1,17 @@
+<div class="vjs-bar-column-chart">
+  @for(chart of charts; track chart) {
+    <div class="vjs-chart-example">
+      <div class="vjs-chart-example-title">{{chart.desc}}</div>
+      @if(chart.comments) {
+        <div class="vjs-chart-example-comments">{{chart.comments}}</div>
+      }
+      <div class="vjs-chart-example-container">
+        @if(chart.type === 'area') {
+          <vjs-area-chart [options]="chart.options"></vjs-area-chart>
+        } @else if (chart.type === 'line') {
+          <vjs-line-chart [options]="chart.options"></vjs-line-chart>
+        }
+      </div>
+    </div>
+  }
+</div>
